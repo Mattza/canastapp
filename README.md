@@ -1,2 +1,2 @@
-# canastapp
+# Canastapp
 Scoreboard for canasta
