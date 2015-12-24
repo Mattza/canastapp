@@ -1,0 +1,2 @@
+# canastapp
+Scoreboard for canasta
