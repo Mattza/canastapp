@@ -58,8 +58,8 @@ gulp.task('dist:copy',function(){
 
 
     // Css
-    gulp.src('css/*.css')
-        .pipe(gulp.dest('dist/css/'));
+    //gulp.src('css/*.css')
+    //    .pipe(gulp.dest('dist/css/'));
 })
 gulp.task('dist', ['scripts','less'], function () {
     gulp.run('dist:copy');
