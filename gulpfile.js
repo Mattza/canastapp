@@ -62,6 +62,10 @@ gulp.task('dist:copy',function(){
 })
 gulp.task('dist', ['scripts','less'], function () {
     gulp.run('dist:copy');
+
+})
+
+gulp.task('run',function(){
     conn.server({
         root: [__dirname]+'/dist',
         port: 1234,
