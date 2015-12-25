@@ -53,7 +53,7 @@ gulp.task('dist:copy',function(){
     gulp.src('*.js')
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
-    
+
     gulp.src('bower_components/**/*.js')
         .pipe(gulp.dest('dist/bower_components/'));
 
