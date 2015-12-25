@@ -6,7 +6,7 @@ var canastApp = angular.module('canastApp', ['ngRoute', 'LocalStorageModule','ng
         $routeProvider.otherwise({ redirectTo: '/' });
     }]);
 
-canastApp.controller('ScoreboardCtrl', function ScoreboardCtrl($scope, canastAppService) {
+canastApp.controller('ScoreboardCtrl',['$scope','canastAppService', function ScoreboardCtrl($scope, canastAppService) {
     $scope.canasta = canastAppService.canasta;
     $scope.newPlayer = "";
     $scope.isAdding = function(){
@@ -60,7 +60,7 @@ canastApp.controller('ScoreboardCtrl', function ScoreboardCtrl($scope, canastApp
         'Bratz',
     ]
 
-});
+}]);
 
 
 canastApp.directive('sumBackground', function () {
@@ -82,7 +82,7 @@ canastApp.directive('sumBackground', function () {
     }
 });
 
-canastApp.service('canastAppService', function ($http, $q, $routeParams, localStorageService) {
+canastApp.service('canastAppService',['$http', '$q', '$routeParams', 'localStorageService', function ($http, $q, $routeParams, localStorageService) {
     //this.canasta = localStorageService.get('canastaSave');
 
     this.canasta = localStorageService.get('canasta');
@@ -119,6 +119,6 @@ canastApp.service('canastAppService', function ($http, $q, $routeParams, localSt
         this.canasta.rounds.splice(index, 1);
 
     }
-});/**
+}]);/**
  * Created by matknu on 2015-12-24.
  */
