@@ -18,7 +18,7 @@
     "url": "https://github.com/Mattza/canastapp/issues"
   },
   "homepage": "https://github.com/Mattza/canastapp#readme",
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^2.3.1",
