@@ -63,7 +63,7 @@ gulp.task('dist:copy',function(){
     gulp.src('css/*.css')
         .pipe(gulp.dest('dist/css/'));
 })
-gulp.task('dist', ['scripts','less'], function () {
+gulp.task('dist', ['bower','scripts','less'], function () {
     gulp.run('dist:copy');
 
 })
