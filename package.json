@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "postinstall": "bower install && gulp dist",
-
-    "start":"gulp run",
+    "start": "gulp run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/Mattza/canastapp#readme",
   "dependencies": {
+    "bower": "^1.7.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^2.3.1",
