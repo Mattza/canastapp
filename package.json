@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "postinstall": "bower install && gulp dist",
-    "start": "node index.js",
+    "start": "bower install && gulp dist && node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
