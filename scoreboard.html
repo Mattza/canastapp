@@ -1,0 +1,64 @@
+<div class="scoreboard">
+    <h2>CanastApp</h2>
+    <h4>Spelade rundor: {{canasta.rounds.length}}</h4>
+
+    <div class="scoreboardCol" ng-repeat=" player in canasta.players" ng-style="{width:(100/(canasta.players.length+canasta.rounds.length===0))'%'}">
+        <p>{{player.name}}<span ng-show="canasta.rounds == 0" ng-click="canasta.players.splice($index,1)"> - Ta bort</span></p>
+        <div ng-repeat="round in canasta.rounds">
+
+            <p class="score">{{round.scores[$parent.$index]}}</p>
+            <p class="sum" ng-show="$index>0" sum-background="{{round.sums[$parent.$index]}}">{{round.sums[$parent.$index]}}</p>
+        </div>
+        <input type="number" ng-model="scores[$index]" />
+    </div>
+    <div class="scoreboardCol" ng-show="canasta.rounds === 0 && canasta.players.length<3">
+        <p>Ange spelarnamn</p>
+        <input type="text" ng-model="newPlayer" />
+        <button ng-click="addPlayer()">Lägg till</button>
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <button ng-click="saveRound(scores)">Omgång klar </button>
+
+    <button ng-click="canasta.rounds.length=0">Börja om</button>
+    <p class="red">{{error}}</p>
+    <div ng-click="debug=!debug" style="height:100px"><p ng-show="debug">Data: {{canasta}}</p></div>
+</div>
+
+<!--<p>Rounds[1]: {{canasta.Rounds[1]}}</p>
+<p>Rounds[l-1]: {{canasta.Rounds[canasta.Rounds.length-1]}}</p>-->
+<!--<table>
+
+    <tr >
+        <td ng-repeat=" player in canasta.players">{{player.namn}}</td>
+    </tr>
+    <tr ng-repeat="round in canasta.rounds">
+        <td ng-repeat="score in round">{{score}}</td>
+        <td><button ng-click="deleteRound($index)">Del</button></td>
+    </tr>
+    
+    
+    <tr>
+        <td ng-repeat=" player in canasta.players"><input type="text" ng-model="scores[$index]" /></td>
+    </tr>
+    
+</table>-->
+
+
+
+
+
+<!--<div class="well" style="margin-top: 30px; width: 200px; overflow: hidden; height:700px;">
+    <form class="form-search">
+        <div class="input-append">
+            <input type="text" ng-model="search" class="search-query" style="width: 80px">
+            <button type="submit" class="btn">Search</button>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="leftfade" ng-repeat="name in names | filter:search">
+                <a href="#"> {{name}} </a>
+            </li>
+        </ul>
+    </form>
+</div>-->

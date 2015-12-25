@@ -1,0 +1,26 @@
+{
+  "name": "canastapp",
+  "version": "1.0.0",
+  "description": "Scoreboard for Canasta",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattza/canastapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mattza/canastapp/issues"
+  },
+  "homepage": "https://github.com/Mattza/canastapp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "^1.5.1"
+  }
+}
