@@ -55,15 +55,15 @@ gulp.task('dist:copy',function(){
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
 
-    //gulp.src('bower_components/**/*.js')
-    //    .pipe(gulp.dest('dist/bower_components/'));
-    //
+    gulp.src('libs/**/*.js')
+        .pipe(gulp.dest('dist/libs/'));
+
 
     // Css
     gulp.src('css/*.css')
         .pipe(gulp.dest('dist/css/'));
 })
-gulp.task('dist', ['bower','scripts','less'], function () {
+gulp.task('dist', ['scripts','less'], function () {
     gulp.run('dist:copy');
 
 })
