@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 //var gutil = require('gulp-util');
 var less = require('gulp-less');
 var concat = require('gulp-concat');
+var bower = require('gulp-bower');
 
 gulp.task('serve', function () {
     conn.server({
@@ -54,18 +55,22 @@ gulp.task('dist:copy',function(){
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
 
-    gulp.src('bower_components/**/*.js')
-        .pipe(gulp.dest('dist/bower_components/'));
-
+    //gulp.src('bower_components/**/*.js')
+    //    .pipe(gulp.dest('dist/bower_components/'));
+    //
 
     // Css
     gulp.src('css/*.css')
         .pipe(gulp.dest('dist/css/'));
 })
-gulp.task('dist', ['scripts','less'], function () {
+gulp.task('dist', ['bower','scripts','less'], function () {
     gulp.run('dist:copy');
 
 })
+gulp.task('bower', function() {
+    return bower()
+        .pipe(gulp.dest('dist/bower_components/'))
+});
 
 gulp.task('run',function(){
     conn.server({
