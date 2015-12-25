@@ -9,6 +9,12 @@ var canastApp = angular.module('canastApp', ['ngRoute', 'LocalStorageModule','ng
 canastApp.controller('ScoreboardCtrl', function ScoreboardCtrl($scope, canastAppService) {
     $scope.canasta = canastAppService.canasta;
     $scope.newPlayer = "";
+    $scope.isAdding = function(){
+        return $scope.canasta.rounds == 0 && $scope.canasta.players.length<3
+    }
+    $scope.getWidth = function(){
+        return Math.floor(100/($scope.canasta.players.length+($scope.isAdding()?1:0)))+'%';
+    }
     $scope.addPlayer = function () {
 
         $scope.canasta.players.push({ name: $scope.newPlayer });
