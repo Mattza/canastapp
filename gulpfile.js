@@ -52,6 +52,9 @@ gulp.task('dist:copy',function(){
     // Scripts
     gulp.src('*.js')
         .pipe(gulp.dest('dist/'));
+    gulp.src('bower_components/**/*.js')
+        .pipe(gulp.dest('dist/bower_components'));
+
 
     // Css
     gulp.src('css/*.css')
@@ -61,7 +64,7 @@ gulp.task('dist', ['scripts','less'], function () {
     gulp.run('dist:copy');
     conn.server({
         root: [__dirname]+'/dist',
-        port: 80,
+        port: 1234,
         livereload: false
     });
 })
