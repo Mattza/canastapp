@@ -40,8 +40,7 @@ gulp.task('watch', function () {
     gulp.watch(['./css/**/*.less'], ['less']);
 
 });
-
-gulp.task('dist', ['scripts','less'], function () {
+gulp.task('dist:copy',function(){
     // Page
     gulp.src('*.html')
         .pipe(gulp.dest('dist/'));
@@ -57,6 +56,14 @@ gulp.task('dist', ['scripts','less'], function () {
     // Css
     gulp.src('css/*.css')
         .pipe(gulp.dest('dist/css/'));
+})
+gulp.task('dist', ['scripts','less'], function () {
+    gulp.run('dist:copy');
+    conn.server({
+        root: [__dirname]+'/dist',
+        port: 80,
+        livereload: false
+    });
 })
 
 gulp.task('default', ['serve', 'watch', 'scripts']);
