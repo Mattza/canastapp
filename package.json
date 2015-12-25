@@ -4,6 +4,8 @@
   "description": "Scoreboard for Canasta",
   "main": "app.js",
   "scripts": {
+    "prestart":"bower install",
+    "start":"gulp dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

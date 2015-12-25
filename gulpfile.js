@@ -43,7 +43,7 @@ gulp.task('watch', function () {
 
 gulp.task('dist', ['scripts','less'], function () {
     // Page
-    gulp.src('index.html')
+    gulp.src('*.html')
         .pipe(gulp.dest('dist/'));
 
     // Favicon
@@ -52,7 +52,7 @@ gulp.task('dist', ['scripts','less'], function () {
 
     // Scripts
     gulp.src('*.js')
-        .pipe(gulp.dest('dist/js/'));
+        .pipe(gulp.dest('dist/'));
 
     // Css
     gulp.src('css/*.css')
